@@ -41,7 +41,20 @@ h1{
     color: $primary-color;
     text-align: center;
     padding-top: 90px;
+    // -webkit-animation: h1 1s ease-in-out infinite alternate;
+    // -moz-animation: h1 1s ease-in-out infinite alternate;
+    // animation: h1 1s ease-in-out infinite alternate;
 }
+
+// @-webkit-keyframes h1 {
+//     from {
+//       text-shadow: 0 0 10px $primary, 0 0 20px $primary, 0 0 30px $special-orange, 0 0 40px $special-orange, 0 0 50px $special-orange, 0 0 60px $special-orange, 0 0 70px $special-orange;
+//     }
+//     to {
+//       text-shadow: 0 0 20px $primary, 0 0 30px #FF073A, 0 0 40px #FF073A, 0 0 50px #FF073A, 0 0 60px #FF073A, 0 0 70px #FF073A, 0 0 80px #FF073A;
+//     }
+// }
+
 h2{
     font-size: 3.5rem;
     text-align: center;
@@ -78,8 +91,22 @@ h3{
     padding: 2rem;
     text-align: center;
     margin: 2rem 0;
-    background-color: rgba(255, 255, 255, .5);
     border: .5rem solid rgba(242, 77, 41, .5);
+    background: url('assets/down-arrow.svg');
+    background-color: rgba(255, 255, 255, .5);
+    padding: 0.8rem;
+    box-sizing: border-box;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 60%, 0 0;
+    background-size: 3rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
  }
 
  button{
@@ -88,9 +115,9 @@ h3{
     border-radius: 13px;
     border: none;
     background-color: rgba(242, 77, 41, .5);
-    border: 4px solid $special-blue;
+    border: 4px solid $primary;
         &:hover{
-            background-color: $special-blue;
+            background-color: $primary;
         }
     color: $white;
  }
@@ -105,7 +132,7 @@ li{
     font-size: 2rem;
     margin: 1rem;
     width: calc(100% / 2 - 2rem);
-    border: 0.5rem solid $special-blue;
+    border: 0.5rem solid $primary;
     padding: 10px;
 }
 
