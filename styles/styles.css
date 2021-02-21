@@ -237,6 +237,7 @@ html {
 
 * {
   font-size: 62.5%;
+  border: 1px solid darkcyan;
 }
 
 body {
@@ -250,9 +251,69 @@ body {
   font-family: "Roboto Mono", monospace;
 }
 
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+ul,
+h1,
+h2,
+h3 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-size: 12rem;
   color: #c4cfd0;
+  text-align: center;
+  padding-top: 90px;
+}
+
+h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #0b204c;
+}
+
+.search-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.search-tools div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+#country-name {
+  font-size: 3rem;
+  padding: 2rem;
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  margin: 2rem 0;
+}
+
+button {
+  font-size: 3rem;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 13%;
+  border: none;
 }
