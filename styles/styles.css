@@ -274,17 +274,6 @@ h1 {
   color: #c4cfd0;
   text-align: center;
   padding-top: 90px;
-  -webkit-animation: h1 1s ease-in-out infinite alternate;
-  animation: h1 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes h1 {
-  from {
-    text-shadow: 0 0 10px #1c366b, 0 0 20px #1c366b, 0 0 30px #f24d29, 0 0 40px #f24d29, 0 0 50px #f24d29, 0 0 60px #f24d29, 0 0 70px #f24d29;
-  }
-  to {
-    text-shadow: 0 0 20px #1c366b, 0 0 30px #ff8300, 0 0 40px #ff8300, 0 0 50px #ff8300, 0 0 60px #ff8300, 0 0 70px #ff8300, 0 0 80px #ff8300;
-  }
 }
 
 h2 {
@@ -376,7 +365,7 @@ li {
   font-size: 2rem;
   margin: 1rem;
   width: calc(100% / 2 - 2rem);
-  border: 0.5rem solid #1c366b;
+  border: 0.5rem solid #0b204c;
   padding: 10px;
 }
 
