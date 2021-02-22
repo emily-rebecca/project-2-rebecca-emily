@@ -237,6 +237,7 @@ html {
 
 * {
   font-size: 62.5%;
+  border: 1px solid darkcyan;
 }
 
 body {
@@ -274,6 +275,7 @@ h1 {
   color: #c4cfd0;
   text-align: center;
   padding-top: 90px;
+  margin-bottom: 30px;
 }
 
 h2 {
@@ -378,4 +380,47 @@ footer {
   position: fixed;
   width: 100%;
   padding: 5px 0;
+}
+
+@media (max-width: 840px) {
+  h1 {
+    font-size: 10rem;
+    margin-bottom: 60px;
+  }
+  h2 {
+    margin-bottom: 9rem;
+  }
+  footer {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 5.5rem;
+    margin-bottom: 30px;
+    padding-top: 70px;
+  }
+  h2 {
+    font-size: 2.3rem;
+    margin-bottom: 5rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  .search-tools div {
+    width: 80%;
+  }
+  #country-name {
+    font-size: 2.5rem;
+    background-size: 2rem;
+  }
+  button {
+    font-size: 2.5rem;
+    border-radius: 25px;
+    margin-top: 40px;
+  }
+  li {
+    width: 100%;
+  }
 }
