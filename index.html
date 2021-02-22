@@ -20,15 +20,18 @@
     <main class="wrapper">
         <section class="search">
             <div class="search-tools">
-                <div>
-                    <h3>Country:</h3>
+
+                <form action="#">
+                    <label for="country-name">
+                        <h3>Country:</h3>
+                    </label>
                     <select name="country-name" id="country-name">
-                        <option value="1">USA</option>
-                        <option value="2">Scotland</option>
-                        <option value="3">United Kingdom</option>
+                        <option value="usa">USA</option>
+                        <option value="scotland">Scotland</option>
+                        <option value="uk">United Kingdom</option>
                     </select>
-                </div>
-                <button>Search</button>
+                    <button type="submit">Search</button>
+                </form>
             </div>
         </section>
         <section class="search-results">

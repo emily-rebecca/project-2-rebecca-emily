@@ -275,7 +275,6 @@ h1 {
   color: #c4cfd0;
   text-align: center;
   padding-top: 90px;
-  margin-bottom: 30px;
 }
 
 h2 {
@@ -301,7 +300,7 @@ h2 {
   border-radius: 13px;
 }
 
-.search-tools div {
+form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
