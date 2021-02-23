@@ -2,7 +2,7 @@
 @import 'baseStyling';
 
 *{font-size: 62.5%;
-border: 1px solid darkcyan;
+// border: 1px solid darkcyan;
 }
 
 
@@ -114,6 +114,7 @@ h3{
 ul{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 li{
@@ -122,8 +123,15 @@ li{
     width: calc(100% / 2 - 2rem);
     border: 0.5rem solid $darker-blue;
     padding: 10px;
+    background-color:  rgba(242, 77, 41, .6);
+
 }
 
+a {
+    font-size: 2rem;
+    color: $special-blue;
+
+}
 
  footer{
      font-size: 3rem;
@@ -150,6 +158,10 @@ li{
     footer{
         margin-top: 0;
     }
+    li{
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 600px){
@@ -179,7 +191,5 @@ li{
         border-radius: 25px;
         margin-top: 40px;
     }
-     li{
-         width: 100%;
-     }
+
 }

@@ -237,7 +237,6 @@ html {
 
 * {
   font-size: 62.5%;
-  border: 1px solid darkcyan;
 }
 
 body {
@@ -360,6 +359,7 @@ ul {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
 li {
@@ -368,6 +368,12 @@ li {
   width: calc(100% / 2 - 2rem);
   border: 0.5rem solid #0b204c;
   padding: 10px;
+  background-color: rgba(242, 77, 41, 0.6);
+}
+
+a {
+  font-size: 2rem;
+  color: #1c366b;
 }
 
 footer {
@@ -391,6 +397,9 @@ footer {
   }
   footer {
     margin-top: 0;
+  }
+  li {
+    width: 100%;
   }
 }
 
@@ -418,8 +427,5 @@ footer {
     font-size: 2.5rem;
     border-radius: 25px;
     margin-top: 40px;
-  }
-  li {
-    width: 100%;
   }
 }
