@@ -26,7 +26,22 @@ raiseTheBar.displayInfo = (breweryList)=>{
     listContainer.innerHTML = ' ';
 
     breweryList.forEach((bar) => {
-        console.log(bar)
+        // console.log(bar.name);
+        const name = document.createElement('h3');
+        name.innerText = bar.name;
+
+        const website = document.createElement('a');
+           // artContainer.href = artPiece.link;
+        website.href = bar.website_url;
+
+        website.innerText = "Here's the link!";
+
+        console.log(name, website);
+        
+
+        const searchResults = document.createElement('li');
+        listContainer.appendChild(searchResults);
+        searchResults.append(name, website);
     });
 
 }
@@ -35,7 +50,6 @@ raiseTheBar.displayInfo = (breweryList)=>{
 raiseTheBar.init = () => {
     //i call people into action
     raiseTheBar.getInfo();
-    raiseTheBar.displayInfo();
 }
 
 raiseTheBar.init();
