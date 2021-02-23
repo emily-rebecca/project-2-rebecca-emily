@@ -36,7 +36,6 @@ raiseTheBar.displayInfo = (breweryList)=>{
 
         website.innerText = "Here's the link!";
 
-        console.log(name, website);
         
 
         const searchResults = document.createElement('li');
@@ -46,10 +45,21 @@ raiseTheBar.displayInfo = (breweryList)=>{
 
 }
 
+raiseTheBar.getUserChoice = (event) => {
+    // event.preventDefault();
+    document.querySelector('form');
+    addEventListener('submit', () => { 
+        console.log('it submitted');
+        const selectElement = document.querySelector('#country-name');
+        console.log(selectElement.value);
+    })
+}
+
 
 raiseTheBar.init = () => {
     //i call people into action
     raiseTheBar.getInfo();
+    raiseTheBar.getUserChoice();
 }
 
 raiseTheBar.init();
