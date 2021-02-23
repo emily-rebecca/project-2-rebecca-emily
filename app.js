@@ -13,15 +13,21 @@ raiseTheBar.getInfo = () => {
         .then((jsonResponse) => {
             console.log(jsonResponse);
             raiseTheBar.displayInfo(jsonResponse);
+            
         })
 
 }
 
 
 
-raiseTheBar.displayInfo = ()=>{
+raiseTheBar.displayInfo = (breweryList)=>{
     //displaying data on the page
-       
+    const listContainer = document.querySelector('ul');
+    listContainer.innerHTML = ' ';
+
+    breweryList.forEach((bar) => {
+        console.log(bar)
+    });
 
 }
 
