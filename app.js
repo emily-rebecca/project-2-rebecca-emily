@@ -8,6 +8,10 @@ raiseTheBar.getInfo = () => {
     //FETCH THE URL AND RETURN WITH JSON
     const url = new URL(raiseTheBar.apiUrl);
 
+    url.search = new URLSearchParams({
+        // by_state:`${userChoice}`
+    })
+
     fetch(url)
         .then((response)=>{
             return response.json();
@@ -50,17 +54,19 @@ raiseTheBar.displayInfo = (breweryList)=>{
 raiseTheBar.getUserChoice = (event) => {
     // the following code puts the select element on the form element. 
     const formEl = document.querySelector('form');
-    const selectElement = document.querySelector('#country-name');
-    const country = selectElement.value;
-    formEl.name = country;
-
-    addEventListener('submit', () => { 
-        console.log('it submitted');
+    // const country = selectElement.value;
+    // formEl.name = country;
+    // console.log(formEl.name);
+    
+    addEventListener('submit', (event) => { 
+        event.preventDefault();
         
-        const userChoice = formEl.name;
-        console.log(userChoice);
+        const selectElement = document.getElementById('country-name').selectedIndex;
+        console.log(selectElement);
+        // const userChoice = formEl.name;
+        // console.log(userChoice);
 
-        raiseTheBar.getInfo(userChoice);
+        // raiseTheBar.getInfo(userChoice);
        
     })
 }
