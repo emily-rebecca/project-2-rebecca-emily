@@ -13,7 +13,7 @@ raiseTheBar.getInfo = () => {
         .then((jsonResponse) => {
             console.log(jsonResponse);
             raiseTheBar.displayInfo(jsonResponse);
-            
+            raiseTheBar.getUserChoice(jsonResponse);
         })
 
 }
@@ -36,6 +36,10 @@ raiseTheBar.displayInfo = (breweryList)=>{
 
         website.innerText = "Here's the link!";
 
+        const countryName = bar.country;
+        console.log(countryName);
+        
+
         
 
         const searchResults = document.createElement('li');
@@ -45,13 +49,38 @@ raiseTheBar.displayInfo = (breweryList)=>{
 
 }
 
-raiseTheBar.getUserChoice = (event) => {
-    // event.preventDefault();
-    document.querySelector('form');
+raiseTheBar.getUserChoice = (countryChoice) => {
+    
+    const formInJs = document.querySelector('form');
+    console.log(formInJs, "submitted");
+    
     addEventListener('submit', () => { 
-        console.log('it submitted');
-        const selectElement = document.querySelector('#country-name');
-        console.log(selectElement.value);
+        // event.preventDefault();
+        
+       
+        
+
+
+
+
+
+        // console.log(event);
+    //    const userChoice = event.target.value;
+    //     raiseTheBar.getInfo(userChoice);
+        // console.log('it submitted');
+        // const selectElement = document.querySelector('#country-name');
+        // console.log(selectElement.value);
+        //when a country in the dropdown is selected
+        //find breweires with a value of that country
+        //return a list of objects that match that query 
+        // const countryProperty = raiseThebar.jsonResponse.country;
+        // console.log(countryProperty);
+        // console.log(countryChoice);
+
+        // const countryProperty = countryChoice.country;
+        
+
+        
     })
 }
 
