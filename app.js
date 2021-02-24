@@ -1,6 +1,8 @@
 const raiseTheBar = {};
 
-raiseTheBar.apiUrl = "https://api.openbrewerydb.org/breweries";
+raiseTheBar.apiUrl = `https://api.openbrewerydb.org/breweries?by_city=atlanta`;
+
+// I think we are going to have to search by one of the parameters laid out in the API
 
 raiseTheBar.getInfo = () => {
     //FETCH THE URL AND RETURN WITH JSON
@@ -11,7 +13,7 @@ raiseTheBar.getInfo = () => {
             return response.json();
         })
         .then((jsonResponse) => {
-            console.log(jsonResponse);
+            // console.log(jsonResponse);
             raiseTheBar.displayInfo(jsonResponse);
             
         })
@@ -46,12 +48,20 @@ raiseTheBar.displayInfo = (breweryList)=>{
 }
 
 raiseTheBar.getUserChoice = (event) => {
-    // event.preventDefault();
-    document.querySelector('form');
+    // the following code puts the select element on the form element. 
+    const formEl = document.querySelector('form');
+    const selectElement = document.querySelector('#country-name');
+    const country = selectElement.value;
+    formEl.name = country;
+
     addEventListener('submit', () => { 
         console.log('it submitted');
-        const selectElement = document.querySelector('#country-name');
-        console.log(selectElement.value);
+        
+        const userChoice = formEl.name;
+        console.log(userChoice);
+
+        raiseTheBar.getInfo(userChoice);
+       
     })
 }
 
