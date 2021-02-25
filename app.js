@@ -1,17 +1,23 @@
 const raiseTheBar = {};
 
-raiseTheBar.apiUrl = "https://api.openbrewerydb.org/breweries";
+raiseTheBar.apiUrl = `https://api.openbrewerydb.org/breweries?by_city=atlanta`;
 
-raiseTheBar.getInfo = () => {
+// I think we are going to have to search by one of the parameters laid out in the API
+
+raiseTheBar.getInfo = (query = raiseTheBar.apiUrl) => {
     //FETCH THE URL AND RETURN WITH JSON
     const url = new URL(raiseTheBar.apiUrl);
+
+    url.search = new URLSearchParams({
+        by_state:query
+    })
 
     fetch(url)
         .then((response)=>{
             return response.json();
         })
         .then((jsonResponse) => {
-            console.log(jsonResponse);
+            // console.log(jsonResponse);
             raiseTheBar.displayInfo(jsonResponse);
             
         })
@@ -46,12 +52,23 @@ raiseTheBar.displayInfo = (breweryList)=>{
 }
 
 raiseTheBar.getUserChoice = (event) => {
-    // event.preventDefault();
-    document.querySelector('form');
-    addEventListener('submit', () => { 
-        console.log('it submitted');
-        const selectElement = document.querySelector('#country-name');
-        console.log(selectElement.value);
+    
+    addEventListener('submit', (event) => { 
+        event.preventDefault();
+        // the following code puts the select element on the form element. 
+        const formEl = document.querySelector('form');
+        const selectElement = document.getElementById('country-name');
+        const country = selectElement.value;
+        formEl.name = country;
+        console.log(formEl.name);
+        
+        // const selectElement = document.getElementById('country-name').selectedIndex;
+        // console.log(selectElement);
+
+        const userChoice = formEl.name;
+
+        raiseTheBar.getInfo(userChoice);
+       
     })
 }
 
