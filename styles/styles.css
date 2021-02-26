@@ -280,6 +280,7 @@ h2 {
   font-size: 3.5rem;
   text-align: center;
   color: #FFF;
+  text-transform: capitalize;
 }
 
 .search-tools {

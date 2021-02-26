@@ -24,7 +24,17 @@ raiseTheBar.getInfo = (query = raiseTheBar.apiUrl) => {
 
 }
 
+raiseTheBar.displayPuns = () => {
+    const puns= ['Love is Ale we need', `don't worry be hoppy`, `if you are hoppy and you know it drink craft`, `life is brewtiful`, 'Here’s some suds to be your buds', 'Wheat love for you to try our brewery app ', 'Beer witness to our Stella app','we are hoptimistic that you will find another round of pubs','this is a shandy app for whatever ales you'];
 
+    function getRandomPun() {
+    const punMath = Math.floor(Math.random() * puns.length);
+    return puns[punMath];
+    } 
+
+    const h2El = document.querySelector('h2');
+    h2El.innerHTML = getRandomPun();
+}
 
 raiseTheBar.displayInfo = (breweryList)=>{
     //displaying data on the page
@@ -77,6 +87,7 @@ raiseTheBar.init = () => {
     //i call people into action
     raiseTheBar.getInfo();
     raiseTheBar.getUserChoice();
+    raiseTheBar.displayPuns();
 }
 
 raiseTheBar.init();
