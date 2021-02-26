@@ -1,6 +1,6 @@
 const raiseTheBar = {};
 
-raiseTheBar.apiUrl = `https://api.openbrewerydb.org/breweries?by_city=atlanta`;
+raiseTheBar.apiUrl = `https://api.openbrewerydb.org/breweries?`;
 
 // I think we are going to have to search by one of the parameters laid out in the API
 
@@ -47,6 +47,8 @@ raiseTheBar.displayInfo = (breweryList)=>{
         const searchResults = document.createElement('li');
         listContainer.appendChild(searchResults);
         searchResults.append(name, website);
+
+
     });
 
 }
@@ -62,13 +64,15 @@ raiseTheBar.getUserChoice = (event) => {
         formEl.name = country;
         console.log(formEl.name);
         
-        // const selectElement = document.getElementById('country-name').selectedIndex;
-        // console.log(selectElement);
-
         const userChoice = formEl.name;
-
         raiseTheBar.getInfo(userChoice);
-       
+
+
+        // const selectElement = document.getElementById('country-name').selectedIndex;
+        // const allOptionsFromSelector = document.getElementById('country-name').options;
+        // const selectedOption = allOptionsFromSelector[selectElement];
+
+        // raiseTheBar.getInfo(selectedOption.value);
     })
 }
 
