@@ -59,7 +59,7 @@ h2{
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(196, 207, 208, 0.8);
+    background-color: rgba(255,255,255,0.8);
     padding: 4rem 0;
     margin-top: 4rem;
     border-radius: 13px;
@@ -75,7 +75,7 @@ form{
     
 h3{
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 700;
     color: $darker-blue;
 }
 
@@ -86,7 +86,7 @@ h3{
     padding: 2rem;
     text-align: center;
     margin: 2rem 0;
-    border: .5rem solid rgba(242, 77, 41, .5);
+    border: 3px solid $special-blue;
     background: url('assets/down-arrow.svg');
     background-color: rgba(255, 255, 255, .5);
     padding: 0.8rem;
@@ -109,15 +109,15 @@ h3{
     padding: 1rem 2rem 1rem 2rem;
     border-radius: 13px;
     border: none;
-    background-color: rgba(242, 77, 41, .5);
-    border: 4px solid $special-blue;
+    background-color: $special-blue;
     transition: all 0.5s;
         &:hover,
         &:focus{
-            background-color: $special-blue;
             transform:scale(1.1)
         }
     color: $white;
+    text-transform: uppercase;
+    font-family: $header-font;
  }
 
 //JAVASCRIPT STYLE SECTION = API SEARCH RESULTS
@@ -129,20 +129,28 @@ ul{
 }
 
 li{
-    font-size: 2rem;
     margin: 1rem;
     width: calc(100% / 2 - 2rem);
-    border: 0.5rem solid $darker-blue;
+    border: 3px solid $darker-blue;
     padding: 10px;
-    background-color:  rgba(242, 77, 41, .6);
+    background-color:  rgba(242,77,41,.5);
+    transition: all 0.5s;
+        &:hover,
+        &:focus-within{
+        transform: scale(1.05);
+    }
+    p{
+        font-size: 1.6rem;
+    }
 
 }
 
 a {
-    font-size: 2rem;
     color: $special-blue;
-
+    text-decoration: none;
 }
+    
+
 
 
 // FOOTER STYLES
@@ -196,7 +204,7 @@ a {
         width: 80%;
     }
 
-    #country-name{
+    #state-name{
         font-size: 2.5rem;
         background-size:2rem;
     }
