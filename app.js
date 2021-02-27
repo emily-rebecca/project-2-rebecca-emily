@@ -2,7 +2,6 @@ const raiseTheBar = {};
 
 raiseTheBar.apiUrl = `https://api.openbrewerydb.org/breweries?`;
 
-// I think we are going to have to search by one of the parameters laid out in the API
 
 raiseTheBar.getInfo = (query = raiseTheBar.apiUrl) => {
     //FETCH THE URL AND RETURN WITH JSON
@@ -46,20 +45,37 @@ raiseTheBar.displayInfo = (breweryList)=>{
         const name = document.createElement('h3');
         name.innerText = bar.name;
 
-        const website = document.createElement('a');
-           // artContainer.href = artPiece.link;
-        website.href = bar.website_url;
+        const street = document.createElement('p')
+        street.innerText = bar.street;
+        console.log(street);
 
-        website.innerText = "Here's the link!";
+        // const city = document.createElement('p');
+        // city.innerText = bar.city;
 
+        // const state = document.createElement('p');
+        // state.innerText = bar.state;
+        const city = bar.city;
+        const state = bar.state;
+        console.log(city,state);
+
+        const address = document.createElement('p');
+        address.innerText = `${city}, ${state}`
         
 
+        const website = document.createElement('a');
+        website.target = '_blank';
+        website.href = bar.website_url;
+        website.innerText = "Here's the link!";
+        
         const searchResults = document.createElement('li');
         listContainer.appendChild(searchResults);
-        searchResults.append(name, website);
+        searchResults.append(name,street,address,website);
 
 
     });
+
+        
+
 
 }
 
