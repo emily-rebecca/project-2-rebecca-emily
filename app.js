@@ -18,8 +18,6 @@ raiseTheBar.getInfo = (query = raiseTheBar.apiUrl) => {
         .then((jsonResponse) => {
             
             raiseTheBar.displayInfo(jsonResponse);
-
-            // raiseTheBar.displayModal(jsonResponse);
             
         })
 
@@ -61,6 +59,7 @@ raiseTheBar.displayInfo = (breweryList)=>{
         
         const website = document.createElement('a');
         website.target = '_blank';
+        website.title = 'go to brewery website'
         website.href = bar.website_url;
         website.innerText = "Here's the link!";
         
@@ -79,34 +78,22 @@ raiseTheBar.displayInfo = (breweryList)=>{
 
 }
 
-// raiseTheBar.displayModal = (breweryList) => {
-    
-    
-//     breweryList.forEach((bar)=>{
-//         const modal = document.getElementsByClassName('modal');
-        
-      
-//         console.log(bar.brewery_type);
-//         pEl.innerText = bar.brewery_type;
-//    })
 
-//    }
-
-raiseTheBar.getUserChoice = (event) => {
+raiseTheBar.getUserChoice = () => {
     
     addEventListener('submit', (event) => { 
         event.preventDefault();
         // the following code puts the select element on the form element. 
         const formEl = document.querySelector('form');
-        const selectElement = document.getElementById('country-name');
+        const selectElement = document.getElementById('state-name');
         const country = selectElement.value;
         formEl.name = country;
-        console.log(formEl.name);
         
         const userChoice = formEl.name;
         raiseTheBar.getInfo(userChoice);
 
 
+        // Alternative logic written by Rebecca
         // const selectElement = document.getElementById('country-name').selectedIndex;
         // const allOptionsFromSelector = document.getElementById('country-name').options;
         // const selectedOption = allOptionsFromSelector[selectElement];

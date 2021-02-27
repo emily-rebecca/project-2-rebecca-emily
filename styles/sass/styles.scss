@@ -1,6 +1,9 @@
 @import 'setup';
 @import 'baseStyling';
 
+
+// GENERAL STYLES 
+
 *{font-size: 62.5%;
 // border: 1px solid darkcyan;
 }
@@ -34,6 +37,8 @@ p {
     padding: 0;
 }
 
+// HEADER STYLES
+
 h1{
     font-family:$header-font;
     text-transform: uppercase;
@@ -60,6 +65,8 @@ h2{
     border-radius: 13px;
 }
 
+// FORM STYLES
+
 form{
     display: flex;
     flex-direction: column;
@@ -70,12 +77,11 @@ h3{
     font-size: 3rem;
     font-weight: 400;
     color: $darker-blue;
-    // align-self: flex-start;
 }
 
 
 
- #country-name{
+ #state-name{
     font-size: 3rem;
     padding: 2rem;
     text-align: center;
@@ -113,7 +119,8 @@ h3{
         }
     color: $white;
  }
-//JAVASCRIPT STYLE SECTION
+
+//JAVASCRIPT STYLE SECTION = API SEARCH RESULTS
 
 ul{
     display: flex;
@@ -136,6 +143,9 @@ a {
     color: $special-blue;
 
 }
+
+
+// FOOTER STYLES
 
  footer{
      font-size: 3rem;
