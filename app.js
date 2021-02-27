@@ -16,8 +16,10 @@ raiseTheBar.getInfo = (query = raiseTheBar.apiUrl) => {
             return response.json();
         })
         .then((jsonResponse) => {
-            // console.log(jsonResponse);
+            
             raiseTheBar.displayInfo(jsonResponse);
+
+            // raiseTheBar.displayModal(jsonResponse);
             
         })
 
@@ -41,27 +43,22 @@ raiseTheBar.displayInfo = (breweryList)=>{
     listContainer.innerHTML = ' ';
 
     breweryList.forEach((bar) => {
-        // console.log(bar.name);
+        
         const name = document.createElement('h3');
         name.innerText = bar.name;
 
+        const breweryType = document.createElement('p');
+        breweryType.innerText = `${bar.brewery_type} brewery`
+
         const street = document.createElement('p')
         street.innerText = bar.street;
-        console.log(street);
 
-        // const city = document.createElement('p');
-        // city.innerText = bar.city;
 
-        // const state = document.createElement('p');
-        // state.innerText = bar.state;
         const city = bar.city;
         const state = bar.state;
-        console.log(city,state);
-
         const address = document.createElement('p');
         address.innerText = `${city}, ${state}`
         
-
         const website = document.createElement('a');
         website.target = '_blank';
         website.href = bar.website_url;
@@ -69,7 +66,7 @@ raiseTheBar.displayInfo = (breweryList)=>{
         
         const searchResults = document.createElement('li');
         listContainer.appendChild(searchResults);
-        searchResults.append(name,street,address,website);
+        searchResults.append(name,breweryType,street,address,website);
 
 
     });
@@ -77,7 +74,23 @@ raiseTheBar.displayInfo = (breweryList)=>{
         
 
 
+        
+
+
 }
+
+// raiseTheBar.displayModal = (breweryList) => {
+    
+    
+//     breweryList.forEach((bar)=>{
+//         const modal = document.getElementsByClassName('modal');
+        
+      
+//         console.log(bar.brewery_type);
+//         pEl.innerText = bar.brewery_type;
+//    })
+
+//    }
 
 raiseTheBar.getUserChoice = (event) => {
     
@@ -104,7 +117,6 @@ raiseTheBar.getUserChoice = (event) => {
 
 
 raiseTheBar.init = () => {
-    //i call people into action
     raiseTheBar.getInfo();
     raiseTheBar.getUserChoice();
     raiseTheBar.displayPuns();
