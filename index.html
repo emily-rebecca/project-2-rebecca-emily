@@ -13,19 +13,26 @@
 </head>
 
 <body>
+    <!-- HEADER STARTS -->
     <header class="wrapper">
         <h1>Raise the Bar</h1>
+        <!-- JAVASCRIPT GOES IN H2 (PUNS) -->
         <h2> </h2>
     </header>
+
+    <!-- MAIN STARTS -->
     <main class="wrapper">
         <section class="search">
             <div class="search-tools">
 
+                <!-- FORM STARTS -->
                 <form action="#">
-                    <label for="country-name">
+                    <label for="state-name">
                         <h3>State:</h3>
                     </label>
-                    <select name="country-name" id="country-name">
+                    <select name="state-name" id="state-name">
+
+                        <!-- list of states to search from  -->
 
                         <option value="alabama">Alabama</option>
                         <option value="alaska">Alaska</option>
@@ -81,8 +88,11 @@
                     </select>
                     <button type="submit">Search</button>
                 </form>
+            <!-- end of form -->
             </div>
         </section>
+
+        <!-- API search results are added to this section -->
         <section class="search-results">
             <ul class="flex-container">
                 <!-- //add javascript search results -->
