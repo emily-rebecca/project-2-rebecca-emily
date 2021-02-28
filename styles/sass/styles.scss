@@ -1,10 +1,13 @@
 @import 'setup';
 @import 'baseStyling';
 
+
 *{font-size: 62.5%;
 // border: 1px solid darkcyan;
 }
-
+html{
+    height: 100%;
+}
 
 body{
     background-image: linear-gradient(to bottom, rgba(8, 78, 219, 0.52), rgba(242, 77, 41, 0.73)),url(https://images.unsplash.com/photo-1585564858955-31686b6ea9ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
@@ -12,8 +15,9 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 100vh;
+    height: 100%;
     font-family: $main-font;
+    overflow: hidden;
 }
 
 .wrapper{
@@ -33,6 +37,7 @@ p {
     margin: 0;
     padding: 0;
 }
+
 
 h1{
     font-family:$header-font;
@@ -134,7 +139,6 @@ li{
 a {
     font-size: 2rem;
     color: $special-blue;
-
 }
 
  footer{
@@ -148,6 +152,107 @@ a {
      padding: 5px 0;
  }
 
+ //Bubbles
+
+#bubbles{
+    height: 100%,
+    padding:100px 0;  
+}
+.bubble {
+    width: 60px;
+    height: 60px;
+    background: rgba(242, 77, 41);
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .x1 {
+    opacity: 0.2;
+    transform: scale(0.9);
+    -webkit-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  }
+  .x2 {
+    opacity: 0.5;
+    left: 200px;
+    transform: scale(0.6);
+    -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+  }
+
+  .x3 {
+    left: 350px;
+    transform: scale(0.8);
+    opacity: 0.7;
+    -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  }
+
+//   .x4 {
+//     left: 500px;
+//     transform: scale(0.8);
+//     // opacity: 0.35;
+//     -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+//     -moz-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+//     -o-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+//     animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+// }
+
+
+
+// .x5 {
+//     left: 150px;
+//     -webkit-transform: scale(0.8);
+//     -moz-transform: scale(0.8);
+//     transform: scale(0.8);
+//     // opacity: 0.3; 
+//     animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+//     -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+//     -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+//     -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+// }
+
+
+@keyframes moveclouds{
+    0% { 
+        top: 500px;
+    }
+    100% { 
+        top: -500px;
+    }
+}
+
+@keyframes sideways {
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+}
+  @-webkit-keyframes moveclouds { 
+    0% { 
+        top: 500px;
+    }
+    100% { 
+        top: -500px;
+    }
+}
+@-webkit-keyframes sideWays { 
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+}
+ 
 
 //MEDIA QUERIES START
 

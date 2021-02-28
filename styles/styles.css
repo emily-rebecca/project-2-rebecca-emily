@@ -392,6 +392,61 @@ footer {
   padding: 5px 0;
 }
 
+#bubbles {
+  height: 100%;
+}
+
+.bubble {
+  width: 60px;
+  height: 60px;
+  background: rgba(242, 77, 41, 0.3);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.x1 {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x2 {
+  opacity: 0.5;
+  left: 200px;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+  -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+  animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+
+.x3 {
+  left: 350px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: 0.3;
+  -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {
+    top: 500px;
+  }
+  100% {
+    top: -500px;
+  }
+}
+
+@-webkit-keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+
 @media (max-width: 840px) {
   h1 {
     font-size: 10rem;
