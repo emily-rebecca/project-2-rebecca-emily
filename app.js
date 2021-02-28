@@ -2,7 +2,6 @@ const raiseTheBar = {};
 
 raiseTheBar.apiUrl = `https://api.openbrewerydb.org/breweries?`;
 
-// I think we are going to have to search by one of the parameters laid out in the API
 
 raiseTheBar.getInfo = (query = raiseTheBar.apiUrl) => {
     //FETCH THE URL AND RETURN WITH JSON
@@ -14,10 +13,10 @@ raiseTheBar.getInfo = (query = raiseTheBar.apiUrl) => {
 
     fetch(url)
         .then((response)=>{
+            
             return response.json();
         })
-        .then((jsonResponse) => {
-            // console.log(jsonResponse);
+        .then((jsonResponse) => {            
             raiseTheBar.displayInfo(jsonResponse);
             
         })
@@ -72,7 +71,7 @@ raiseTheBar.getUserChoice = (event) => {
         const selectElement = document.getElementById('country-name');
         const country = selectElement.value;
         formEl.name = country;
-        console.log(formEl.name);
+        // console.log(formEl.name);
         
         const userChoice = formEl.name;
         raiseTheBar.getInfo(userChoice);
@@ -86,6 +85,157 @@ raiseTheBar.getUserChoice = (event) => {
     })
 }
 
+// //NEW SEARCH PARAMS EXPERIMENT************************************
+
+const raiseTheBar2 = {};
+
+raiseTheBar2.baseUrl = "https://api.openbrewerydb.org/breweries?";
+
+//2.get the info about cities
+raiseTheBar2.getCityInfo = (query)=>{
+    // console.log("getting cities");
+    const url = new URL (`${raiseTheBar2.baseUrl}by_city`);
+
+    fetch(url)
+    .then((response)=>{
+        return response.json();
+    })
+    .then((jsonResponse) => {
+        raiseTheBar2.displayCityBarInfo(jsonResponse);
+
+        // raiseTheBar2.getUserCityChoice(jsonResponse.Object);
+    })
+}
+raiseTheBar2.displayCityBarInfo = (dataFromApi)=>{
+    console.log(dataFromApi);
+
+
+    // const listContainer = document.querySelector('ul');
+    // listContainer.innerHTML = ' ';
+
+//     dataFromApi.forEach((bar) => {
+//         const name = document.createElement('h3');
+//         name.innerText = bar.name;
+
+//         const website = document.createElement('a');
+//            // artContainer.href = artPiece.link;
+//         website.href = bar.website_url;
+
+//         website.innerText = "Here's the link!";
+
+//         const searchResults = document.createElement('li');
+//         listContainer.appendChild(searchResults);
+//         searchResults.append(name, website);
+// });
+}
+
+raiseTheBar2.getUserCityChoice = (dataFromApi) => {
+    addEventListener('submit', (event) => { 
+        event.preventDefault();
+        console.log(dataFromApi);
+        
+
+        // the following code puts the select element on the form element. 
+        const inputEl = document.querySelector('input');
+        
+        const selectElement = document.getElementById('city-search');
+
+        const city = selectElement.value;
+        console.log(city);
+
+        const userChoiceCity = dataFromApi.target.value;
+        
+        raiseTheBar2.getUserCityChoice(userChoiceCity);
+        
+
+
+        // const country = selectElement.value;
+        // formEl.name = country;
+        // console.log(formEl.name);
+        
+        // const userChoice = formEl.name;
+        // raiseTheBar.getInfo(userChoice);
+
+    });
+}
+
+
+raiseTheBar2.init = () => {
+    raiseTheBar2.getCityInfo();
+    raiseTheBar2.displayCityBarInfo();
+    raiseTheBar2.getUserCityChoice();
+}
+
+raiseTheBar2.init();
+
+
+
+
+
+// raiseTheBar.getCityInfo = (query= raiseTheBar.apiUrl) => {
+//     const cityUrl = new URL(raiseTheBar.apiUrl);
+
+//     cityUrl.search = new URLSearchParams({
+//         by_city: query
+//     })
+//     fetch(cityUrl)
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((jsonResponse) => {
+//         console.log(jsonResponse);
+//         // raiseTheBar.displayCityInfo(jsonResponse);
+//     })
+// }
+
+
+// raiseTheBar.displayCityInfo = (breweryListByCity)=>{
+
+//     const listContainer = document.querySelector('ul');
+//     listContainer.innerHTML = ' ';
+
+//     breweryListByCity.forEach((bar) => {
+//         const name = document.createElement('h3');
+//         name.innerText = bar.name;
+
+//         const website = document.createElement('a');
+//            // artContainer.href = artPiece.link;
+//         website.href = bar.website_url;
+
+//         website.innerText = "Here's the link!";
+
+        
+
+//         const searchResults = document.createElement('li');
+//         listContainer.appendChild(searchResults);
+//         searchResults.append(name, website);
+//     });
+// }
+
+// raiseTheBar.getUserCityChoice = (event) => {
+
+//     addEventListener('submit', (event) => { 
+//         event.preventDefault();
+//         // the following code puts the select element on the form element. 
+//         const inputEl = document.querySelector('input');
+//         const inputByUser = inputEl.value;
+//         console.log(inputByUser);
+
+//         // const possibleCity = inputEl
+        
+        
+        
+
+
+//         // const country = selectElement.value;
+//         // formEl.name = country;
+//         // console.log(formEl.name);
+        
+//         // const userChoice = formEl.name;
+//         // raiseTheBar.getInfo(userChoice);
+
+//     })
+// }
 
 raiseTheBar.init = () => {
     //i call people into action
@@ -93,6 +243,7 @@ raiseTheBar.init = () => {
     raiseTheBar.getUserChoice();
     raiseTheBar.displayPuns();
 }
+
 
 raiseTheBar.init();
 

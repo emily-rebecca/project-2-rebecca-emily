@@ -97,7 +97,24 @@ h3{
     appearance: none;
 
  }
+// NEW SEARCH PARAMS EXPERIMENT START
+.city-search {
+    font-size: 3rem;
+    color: $darker-blue;
 
+}
+
+.city-search-box{
+    background-color: rgba(255, 255, 255, .5);
+    margin-bottom: 3rem;
+}
+
+
+
+
+
+
+//NEW SEARCH PARAMS EXPERIMENT END
  button{
     font-size: 3rem;
     padding: 1rem 2rem 1rem 2rem;
