@@ -5,7 +5,6 @@
 // GENERAL STYLES 
 
 *{font-size: 62.5%;
-// border: 1px solid darkcyan;
 }
 
 
@@ -71,17 +70,21 @@ form{
     display: flex;
     flex-direction: column;
     width: 60%;
+    h3{
+        color: $darker-blue;
+        text-transform: capitalize;
+    }
 }
     
 h3{
     font-size: 3rem;
     font-weight: 700;
-    color: $darker-blue;
+    color: $white;
 }
 
 
 
- #state-name{
+ .state-name{
     font-size: 3rem;
     padding: 2rem;
     text-align: center;
@@ -131,9 +134,9 @@ ul{
 li{
     margin: 1rem;
     width: calc(100% / 2 - 2rem);
-    border: 3px solid $darker-blue;
+    // border: 3px solid $darker-blue;
     padding: 10px;
-    background-color:  rgba(242,77,41,.5);
+    background-color: $darker-blue;
     transition: all 0.5s;
         &:hover,
         &:focus-within{
@@ -146,7 +149,7 @@ li{
 }
 
 a {
-    color: $special-blue;
+    color: $white;
     text-decoration: none;
 }
     
@@ -164,8 +167,14 @@ a {
      position: fixed;
      width: 100%;
      padding: 5px 0;
- }
-
+     
+    }
+    
+    span a{
+    color: white;
+    font-size: 2rem;
+    border-bottom: 1px solid white;
+    }
 
 //MEDIA QUERIES START
 
@@ -204,7 +213,7 @@ a {
         width: 80%;
     }
 
-    #state-name{
+    .state-name{
         font-size: 2.5rem;
         background-size:2rem;
     }
