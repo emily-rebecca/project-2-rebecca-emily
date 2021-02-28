@@ -294,7 +294,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(196, 207, 208, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 4rem 0;
   margin-top: 4rem;
   border-radius: 13px;
@@ -313,16 +313,16 @@ form {
 
 h3 {
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 700;
   color: #0b204c;
 }
 
-#country-name {
+#state-name {
   font-size: 3rem;
   padding: 2rem;
   text-align: center;
   margin: 2rem 0;
-  border: 0.5rem solid rgba(242, 77, 41, 0.5);
+  border: 3px solid #1c366b;
   background: url("assets/down-arrow.svg");
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0.8rem;
@@ -345,15 +345,15 @@ button {
   padding: 1rem 2rem 1rem 2rem;
   border-radius: 13px;
   border: none;
-  background-color: rgba(242, 77, 41, 0.5);
-  border: 4px solid #1c366b;
+  background-color: #1c366b;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   color: #FFF;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
 }
 
 button:hover, button:focus {
-  background-color: #1c366b;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -368,17 +368,27 @@ ul {
 }
 
 li {
-  font-size: 2rem;
   margin: 1rem;
   width: calc(100% / 2 - 2rem);
-  border: 0.5rem solid #0b204c;
+  border: 3px solid #0b204c;
   padding: 10px;
-  background-color: rgba(242, 77, 41, 0.6);
+  background-color: rgba(242, 77, 41, 0.5);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+li:hover, li:focus-within {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+li p {
+  font-size: 1.6rem;
 }
 
 a {
-  font-size: 2rem;
   color: #1c366b;
+  text-decoration: none;
 }
 
 footer {
@@ -424,7 +434,7 @@ footer {
   .search-tools div {
     width: 80%;
   }
-  #country-name {
+  #state-name {
     font-size: 2.5rem;
     background-size: 2rem;
   }
