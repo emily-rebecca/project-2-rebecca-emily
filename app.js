@@ -57,12 +57,6 @@ raiseTheBar.displayInfo = (breweryList)=>{
         const address = document.createElement('p');
         address.innerText = `${city}, ${state}`
         
-        // const website = document.createElement('a');
-        // website.target = '_blank';
-        // website.title = 'go to brewery website'
-        // website.href = bar.website_url;
-        // website.innerText = "Here's the link!";
-        
         const searchResults = document.createElement('li');
         const linkToUrl = document.createElement('a');
         linkToUrl.href = bar.website_url;
@@ -72,19 +66,8 @@ raiseTheBar.displayInfo = (breweryList)=>{
         listContainer.appendChild(searchResults);
         searchResults.appendChild(linkToUrl);
         linkToUrl.append(name,breweryType,street,address);
-
-
     });
-
-        
-
-
-        
-
-
 }
-
-
 raiseTheBar.getUserChoice = () => {
     
     addEventListener('submit', (event) => { 
@@ -108,7 +91,6 @@ raiseTheBar.getUserChoice = () => {
     })
 }
 
-
 raiseTheBar.init = () => {
     raiseTheBar.getInfo();
     raiseTheBar.getUserChoice();
@@ -116,4 +98,16 @@ raiseTheBar.init = () => {
 }
 
 raiseTheBar.init();
+
+
+        
+
+
+        
+
+
+
+
+
+
 
